@@ -9,6 +9,11 @@ def show_img(img, title='my_picture'):
     cv.waitKey(0)
 
 
+def save_img(img, title='my_picture'):
+
+    cv.imwrite(f'{getcwd()}/images/{title}.tiff', img)
+
+
 def split_channels(img):
 
     b, g, r = cv.split(img)
@@ -45,6 +50,7 @@ def mirrow_image(img):
             mirrow_img[x][y] = img[x][img.shape[1] - 1 - y]
 
     show_img(mirrow_img, 'flipped')
+    # save_img(mirrow_img, 'flipped')
 
 
 def main():
