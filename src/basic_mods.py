@@ -1,6 +1,13 @@
-import cv2 as cv
+from os.path import isdir
 from os import getcwd
 from os import chdir
+from os import mkdir
+import cv2 as cv
+
+
+chdir('..')
+if not isdir(f'{getcwd()}/exports'):
+    mkdir(f'{getcwd()}/exports')    
 
 
 def show_img(img, title='my_picture'):
@@ -11,7 +18,7 @@ def show_img(img, title='my_picture'):
 
 def save_img(img, title='my_picture'):
 
-    cv.imwrite(f'{getcwd()}/images/{title}.tiff', img)
+    cv.imwrite(f'{getcwd()}/exports/{title}.tiff', img)
 
 
 def split_channels(img):
@@ -50,12 +57,10 @@ def mirrow_image(img):
             mirrow_img[x][y] = img[x][img.shape[1] - 1 - y]
 
     show_img(mirrow_img, 'flipped')
-    # save_img(mirrow_img, 'flipped')
 
 
 def main():
 
-    chdir('..')
     img = cv.imread(getcwd() + '/images/peppers.tiff')
     
     # show_img(img)
@@ -64,6 +69,7 @@ def main():
     # fill_color(img)
     
     mirrow_image(img)
+    # save_img(mirrow_img, 'flipped')
 
 
 if __name__ == '__main__':
