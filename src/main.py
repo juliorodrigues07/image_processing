@@ -1,4 +1,4 @@
-from manipulation.gray_equalization import equalization
+from manipulation.hist_equalization import equalization
 from manipulation.basic_mods import mirrow_image
 from manipulation.basic_mods import show_img
 from manipulation.basic_mods import save_img
@@ -15,7 +15,7 @@ def main():
     # Flag 0 reads only the image's gray channel
     img = imread(getcwd() + '/images/clock.tiff', 0)
     norm_img = equalization(img)
-    # save_img(norm_img, 'normalized_img')
+    save_img(norm_img, 'normalized_img')
 
 
 if __name__ == '__main__':
