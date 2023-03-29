@@ -10,14 +10,20 @@
 
       pip install opencv-python
       
+- [seaborn](https://seaborn.pydata.org/) library:
+ 
+      pip install seaborn
+      
+- [Matplotlib](https://matplotlib.org/) library:
+ 
+      pip install matplotlib
+      
 - To install all dependencies:
 
       ./install_dependencies.sh
       
 # Execution
 
-You can add, remove or alter any images and several parameters directly in the source code before running, accordingly to your preference. The instructions for executing each script are as it follows:
+You can add, remove or alter any images, several parameters and function calls directly in the source code before running, accordingly to your preference. The command for executing the script are as it follows:
 
-- Basic Image Manipulations:
-
-      python3 basic_mods.py
+      python3 main.py
