@@ -57,20 +57,4 @@ def mirrow_image(img):
             mirrow_img[x][y] = img[x][img.shape[1] - 1 - y]
 
     show_img(mirrow_img, 'flipped')
-
-
-def main():
-
-    img = cv.imread(getcwd() + '/images/peppers.tiff')
-    
-    # show_img(img)
-    # r, g, b = split_channels(img)
-    # merge_channels(r, g, b)
-    # fill_color(img)
-    
-    mirrow_image(img)
-    # save_img(mirrow_img, 'flipped')
-
-
-if __name__ == '__main__':
-    main()
+    return mirrow_img
