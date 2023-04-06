@@ -23,6 +23,56 @@ def preprocessing(first_image, second_image):
     return height, width, second_image
 
 
+def clumping(first_image, second_image, operator):
+
+    pixels = list()
+    height, width, second_image = preprocessing(first_image, second_image.copy())
+
+    for h in range(height):
+
+        aux = list()
+        for w in range(width):
+
+            first_operand = int(first_image[h][w])
+            second_operand = int(second_image[h][w])
+
+            # Always truncates the result if the value surpasses the upper bound (255)
+            if operator == '+':
+                if first_operand + second_operand > 255:
+                    aux.append(255)
+                else:
+                    aux.append(first_operand + second_operand)
+
+            # Always truncates the result if the value is lower than the lower bound (0)
+            elif operator == '-':
+                if first_operand - second_operand < 0:
+                    aux.append(0)
+                else:
+                    aux.append(first_operand - second_operand)
+
+            elif operator == '*':
+                if first_operand * second_operand > 255:
+                    aux.append(255)
+                else:
+                    aux.append(first_operand * second_operand)
+
+            elif operator == '/':
+                aux.append(int(first_operand / second_operand) if second_operand > 0 else first_operand)
+
+        pixels.append(aux)
+        del aux
+
+    # Creates a blank image, based on the shape of the image past for operation
+    new_img = zeros((height, width, 1), dtype=uint8)
+    rectangle(new_img, (0, 0), (width, height), (255, 255, 255), -1)
+
+    for h in range(height):
+        for w in range(width):
+            new_img[h][w] = pixels[h][w]
+
+    return new_img
+
+
 def linear_interpolation(first_image, second_image, operator):
 
     pixels = list()
@@ -44,7 +94,7 @@ def linear_interpolation(first_image, second_image, operator):
             elif operator == '*':
                 aux.append(first_operand * second_operand)
             elif operator == '/':
-                aux.append(first_operand / second_operand if second_operand > 0 else second_operand)
+                aux.append(int(first_operand / second_operand) if second_operand > 0 else second_operand)
 
         pixels.append(aux)
         del aux
