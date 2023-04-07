@@ -2,6 +2,8 @@
 # Image Processing
  Image processing implementations from scratch, developed in practical DIP course classes and extra-classes activities (Practical classes content from Digital Image Processing course - DCOMP - UFSJ).
  
+# Requirements
+ 
 - [Python](https://python.org) and [pip](https://pip.pypa.io/en/stable/installation/) package manager:
 
       sudo apt install python3 python3-pip build-essential python3-dev
