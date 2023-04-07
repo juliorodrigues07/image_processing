@@ -1,6 +1,6 @@
-[![Python 3.8.10](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3810/)
+[![Python 3.10.6](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 # Image Processing
- Image processing implementations developed in practical DIP course classes (Practical classes content from Digital Image Processing course - DCOMP - UFSJ).
+ Image processing implementations from scratch, developed in practical DIP course classes and extra-classes activities (Practical classes content from Digital Image Processing course - DCOMP - UFSJ).
  
 - [Python](https://python.org) and [pip](https://pip.pypa.io/en/stable/installation/) package manager:
 
@@ -18,12 +18,16 @@
  
       pip install matplotlib
       
+- Biblioteca [numpy](https://numpy.org/):
+
+      pip install numpy
+      
 - To install all dependencies:
 
       ./install_dependencies.sh
       
 # Execution
 
-You can add, remove or alter any images, several parameters and function calls directly in the source code before running, accordingly to your preference. The command for executing the script are as it follows:
+You can export images, add, remove, and alter any of them, as well as modify several parameters and function calls directly in the source code before running, accordingly to your preference. The command for executing the script is as it follows:
 
-      python3 main.py
+    python3 main.py
