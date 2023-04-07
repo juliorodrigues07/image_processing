@@ -20,7 +20,7 @@
  
       pip install matplotlib
       
-- Biblioteca [numpy](https://numpy.org/):
+- [numpy](https://numpy.org/) library:
 
       pip install numpy
       
