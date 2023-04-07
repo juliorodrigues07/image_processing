@@ -1,4 +1,5 @@
 from manipulation.punctual_operations import linear_interpolation
+from manipulation.punctual_operations import logical_operations
 from manipulation.punctual_operations import clumping
 from manipulation.punctual_operations import modulus
 from manipulation.hist_equalization import equalization
@@ -11,7 +12,7 @@ import cv2 as cv
 
 def main():
 
-    # img = imread(getcwd() + '/images/peppers.tiff')
+    # img = imread(f'{getcwd()}/images/peppers.tiff')
     # mirrow_img = mirrow_image(img)
     # save_img(mirrow_img, 'flipped')
 
@@ -42,6 +43,12 @@ def main():
 
     show_img(manual, 'Manual')
     show_img(opcv, 'OpenCV')
+
+    # first_img = cv.imread(f'{getcwd()}/images/A.png', 0)
+    # second_img = cv.imread(f'{getcwd()}/images/B.png', 0)
+
+    # result = logical_operations(first_img, second_img, '', 'xor', '')
+    # show_img(result, 'Manual')
 
 
 if __name__ == '__main__':
